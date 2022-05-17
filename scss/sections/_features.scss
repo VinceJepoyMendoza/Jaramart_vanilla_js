@@ -1,0 +1,62 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+
+#feature {
+  width: 100%;
+  background: #fff;
+}
+
+.feature-slide {
+  padding: 3em;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .btn {
+    margin-top: 2rem;
+  }
+
+  img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
+@media (max-width: $lg) {
+  .swiper-slide-info .lead {
+    @include clamp3;
+  }
+}
+
+@media (max-width: $md) {
+  .swiper {
+
+    &-slide {
+      flex-direction: column;
+
+      &-info {
+        order: 2;
+        margin-top: 1.25rem;
+
+        button {
+          margin-top: 1rem;
+        }
+      }
+
+      img {
+        order: 1;
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .swiper-slide-info .lead {
+    @include clamp2;
+  }
+}

@@ -1,0 +1,121 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&display=swap');
+
+// Theme
+$green-light: #80ffdb;
+$green-medium: #2a9d8f;
+$green-dark: #64dfdf;
+
+$dark-green: #3c6e71;
+$dark-mode: #495057;
+
+$primary: $green-medium;
+$secondary: #e5e5e5;
+
+$max-width: 1250px;
+
+// Breakpoints
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar { width: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;  
+  background: $secondary;
+  transition: background 0.3s ease-out;
+  padding-top: 5rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
+i { color: $primary; }
+
+.py-1 { padding: 1rem 0; }
+.py-2 { padding: 2rem 0; }
+.py-3 { padding: 3rem 0; }
+.py-4 { padding: 4rem 0; }
+.py-5 { padding: 5rem 0; }
+
+:focus {
+  // outline: rgba(#000, 0.15) 1px solid;
+  outline: none;
+  background: none;
+}
+
+// Dark mode
+.dark-mode {
+  transition: background 0.3s ease-out;
+  color: #fff;
+  background: $dark-mode;
+
+  #feature {
+    background: transparent;
+  }
+  
+  a, h1, h2, h3, h4, h5, h6, p, .secondary-nav-content i,
+  .about-content-info-box span {
+    color: #fff;
+  }
+
+  // Bg for accesories
+  .main-nav, .secondary-nav, .about-content-info-box span,
+  .products-content-card, .product-Modal, .product-modal,
+  .testimonials-content_slide, .main-likes, .main-cart,
+  .order-content-form, .main-cart-content-items {
+    background: #343a40;
+  }
+
+}
+
+.container {
+  max-width: $max-width;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.gray-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, 0.25);
+  z-index: 10;
+}
+
+// Disable body scrolling
+.bodyScrollRemove {
+  overflow: hidden;
+}

@@ -1,0 +1,7 @@
+@use '../custom.scss' as *;
+
+@keyframes rotate-icon {
+  100% {
+    transform: rotate(1turn);
+  }
+}

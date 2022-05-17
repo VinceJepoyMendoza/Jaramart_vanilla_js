@@ -1,0 +1,136 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+
+.footer {
+  color: #fff;
+  background: $dark-green;
+  padding-top: 3rem;
+
+  &-contact {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &-box {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 1rem;
+        opacity: 0.7;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &-socials {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+    background: $dark-mode;
+    margin: 2rem 0;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 1rem;
+
+    h3 {
+      position:  relative;
+      padding: 1.5rem 0;
+      margin-bottom: 1rem;
+
+      &::before {
+        content: '';
+        width: 50px;
+        height: 3px;
+        background: $dark-mode;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    ul li a, p {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &-copyright {
+    text-align: center;
+    background: $primary;
+    padding: 2rem;
+    
+    p {
+      color: #000;
+      font-size: 1rem;
+
+      a {
+        color: #fff;
+                
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  i {
+    color: #fff;
+    font-size: 2rem;
+    margin-right: 2rem;
+  }
+
+  i, li {
+    transition: transform 0.3s ease-out;
+
+    &:hover {
+      color: $primary;
+      transform: scale(1.2);
+    }
+  }
+
+}
+
+@media (max-width: $lg) {
+  .footer {
+
+    &-contact {
+      flex-direction: column;
+
+      &-box {
+        margin: 1rem 0;
+      }
+    }
+
+    &-links {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .footer {
+
+    &-socials {
+      flex-direction: column;
+      align-items: center;
+
+      &-icons {
+        margin-top: 1rem;
+      }
+    }
+
+    &-links {
+      grid-template-columns: 1fr;
+    }
+  }
+}

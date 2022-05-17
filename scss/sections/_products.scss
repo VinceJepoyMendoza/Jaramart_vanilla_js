@@ -1,0 +1,386 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+
+.products {
+  position: relative;
+
+  &-content {
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75em;
+    justify-content: center;
+    text-align: center;
+
+    &-card {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      @include card;
+
+      &:hover {
+        .product-like {
+          right: 20px;
+        }
+      }
+
+      img {
+        width: 150px !important;  
+        height: 200px !important;
+        cursor: pointer;
+      }
+
+      &-desc {
+        h3 {
+          color: $primary;
+          font-size: 1rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+
+        #products-card-rating {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0.5rem 0;
+
+          p { 
+            font-size: 1rem;
+            margin-right: 10px;
+          }
+        }
+
+        button {
+          margin-top: 0.5em;
+          width: 60%;
+          font-size: 1rem
+        }
+      }
+
+      img {
+        width: 250px;
+        height: 200px;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+.product-like {
+  position: absolute;
+  top: 20px;
+  right: -45px;
+  padding: 1em;
+  border-radius: 50%;
+  @include transitionProperty;
+}
+
+// Product liked
+.liked-active, .liked-active i { 
+  color: red !important;
+}
+
+// Modals
+.product-modal {
+  padding: 1.2em;
+  background: #fff;
+  overflow: scroll;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  width: 50%;
+  height: 80%;
+  transform: translateX(-50%);
+  z-index: 10;
+  visibility: hidden;
+
+  @include border-sm;
+  @include shadow;
+
+  &-content {
+    &-desc {
+      display: flex;
+      justify-content: space-around;
+      margin: 1em 0;
+      font-size: 1rem;
+
+       span {
+        display: flex;
+        align-items: center;
+        height: 100%;
+       }
+    }
+
+    &-btn {
+      background: linear-gradient(to right, $primary,$green-dark);
+      margin-bottom: 0.5em;
+
+      button {
+        display: inline-block;
+        padding: 1em;
+        border: 0;
+        width: 49%;
+        margin: 0;
+        background: transparent;
+        color: #fff;
+        font-size: 1rem;
+        i {
+          transition: transform 0.3s ease-out;
+          color: #fff;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          i {
+            color: red;
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  
+    .modal-img {
+      width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    h2 {
+      margin: 0.75em 0;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      width: 250px;
+      height: 300px;
+      margin: 1em 0;
+    }
+  }
+}
+
+.main-likes {
+  position: fixed;
+  top: 82px;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  z-index: 9;
+  background: #fff;
+  box-shadow: 10px -5px 10px 0 rgba(#000, 0.15);
+  transition: left 0.3s ease-out;
+
+  &_prod {
+    margin-top: 3.5em;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 1em;
+    
+    &_item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      font-size: 0.75em;
+      @include shadow-sm;
+
+      img {
+        width: 100px !important;
+        height: 100px;
+        padding: 1em;
+      }
+    }
+
+    .price {
+      margin: 0.25em 0;
+    }
+  }
+
+  #close-likes {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: 1em;
+  }
+
+  &-dark-bg {
+    content: '';
+    background: rgba(#000, 0.7);
+    position: absolute;
+    top: 0;
+    left: 300px;
+    height: 100vw !important;
+    width: 100vw;
+    z-index: 11;
+    display: none;
+    transition: all 1s ease-out;
+  }
+}
+
+#main-cart {
+  position: fixed;
+  top: 82px;
+  right: 0;
+  width: 350px;
+  height: calc(100vh - 82px);
+  background: #fff;
+  z-index: 9;
+  transition: transform 0.3s ease-out;
+  transform: translateX(350px);
+
+  .main-cart-content {
+    position: relative;
+    height: 100%;
+
+    &-items {
+      height: calc(100% - 70px);
+      overflow-y: scroll;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        padding: 10px;
+        @include shadow-sm;
+        @include border-sm;
+
+        .item-desc {
+          font-size: 1rem;
+
+          &-pricing {
+            margin-top: 10px;
+
+            input {
+              margin-bottom: 5px;
+              display: inline-block;
+              width: 40px;
+            }
+          }
+
+          button {
+            padding: 0 !important;
+            background: transparent;
+            font-size: 1.2rem;
+            display: block;
+            margin-left: auto;
+          }
+
+          &-title {
+            @include clamp2;
+          }
+        }
+
+        img {
+          width: 100px !important;
+          height: 90px;
+          margin-right: 1em;
+        }
+      }
+
+    }
+
+    &-btn {
+      background: $primary;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      b {
+        color: #fff;
+      }
+
+      a#checkout {
+        border: none;
+        padding: 0.75rem 1.5rem;
+        background: #fff;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.cart-active {
+  left: 0px !important;
+}
+
+.cart-active-right {
+  transform: translateX(0px) !important;
+}
+
+
+@media (max-width: $xxl) {
+  .products {
+
+    &-content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (max-width: $xl) {
+  .products {
+
+    &-content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .product-modal {
+    width: 65%;
+
+    h2, p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .products {
+
+    &-content {
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+        width: 100px !important;  
+        height: 150px !important;
+      }
+    }
+  }
+
+  .product-modal {
+    width: 85%;
+    
+    &-content {
+
+      img {
+        width: 120px !important;
+        height: 130px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .products {
+
+    &-content {
+      grid-template-columns: 1fr;
+
+      &-card-desc h3 {
+        @include clamp2;
+      }
+    }
+  }
+}

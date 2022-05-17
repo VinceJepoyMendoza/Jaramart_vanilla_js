@@ -1,0 +1,205 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+@use '../components/animations' as *;
+
+.main-nav {
+  background: #fff;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 82px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  z-index: 11;
+  @include shadow;
+  @include transitionProperty;
+
+  ul {
+    display: flex;
+
+    li a {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      padding-right: 1rem;
+      border-bottom: transparent 3px solid;
+
+      &:hover {
+        border-bottom: $primary 3px solid;
+      }
+    }
+  }
+
+  button {
+    border-radius: 50%;
+  }
+}
+
+.secondary-nav {
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: -300px;
+  background: #fff;
+  padding: 1em;
+  width: 100%;
+  height: 300px;
+  z-index: 7;
+  box-shadow: 0 -2px 10px 0 rgba(#000, 0.15);
+  @include transitionProperty;
+
+  &-button {
+    position: absolute;
+    top: -70px;
+    right: 15px;
+    font-size: 1.2em;
+
+    #nav-button, #scrollToTop {
+      border-radius: 10px;
+      background: #fff;
+      font-size: 1rem;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    height: 100%;
+
+    a {
+      text-align: center;
+      padding: 0.25em;
+
+      i {
+        display: block;
+        margin-bottom: 15px;
+        @include transitionProperty;
+
+      }
+            
+      &:hover {
+        i {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}
+
+#scrollToTop {
+  background: $primary !important;
+  i {
+    color:#fff !important;
+  }
+}
+
+#messageContainer {
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  max-width: 400px;
+  padding: 1em;
+  padding-right: 2.5em;
+  z-index: 10;
+  color: #fff;
+  background: $primary;
+  border-radius: 5px;
+  box-shadow: -5px 5px 0 0 $green-dark, -10px 10px 0 0 $green-light;
+  transition: left 0.3s ease-out;
+  @include transitionProperty;
+
+  i {
+    color: #ff0;
+    padding: 5px;
+    border: 1px #ff0 solid;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    top: 30%;
+    right: 10px;
+  }
+}
+
+// Toggle secondary nav
+.nav-toggle {
+  bottom: 0;
+}
+
+.receipt-nav {
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 82px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  #goback {
+    background: $primary;
+    padding: 0.5rem 1.25rem;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.4rem;
+
+    i {
+      color: #fff;
+    }
+  }
+}
+
+.receipt-message {
+  width: 60vw;
+  height: calc(70vh - 82px);
+  background: $primary;
+  margin: 1.5em auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  padding: 2rem;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    width: 80%;
+  }
+}
+
+// Media queries
+@media (max-width: $lg) {
+  .main-nav {
+    grid-template-columns: repeat(2, 1fr);
+
+    ul {
+      display: none;
+    }
+  }
+
+  .secondary-nav {
+    display: flex;
+  }
+}
+
+@media (max-width: $sm) {
+  .main-nav {
+    &-widgets {
+      margin-left: -30px;
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  #nav-button {
+    display: none;
+  }
+}

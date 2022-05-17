@@ -1,0 +1,109 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+
+.testimonials {
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin: 0 1em;
+
+    &_slide {
+      position: relative;
+      background: #fff;
+      border-radius: 5px;
+      @include shadow-sm;
+
+      &_desc {
+        padding: 2rem !important;
+
+        i.fa-quote-right, i.fa-quote-left {
+          text-shadow: 3px 3px 0 $green-dark,
+                        6px 6px 0 $green-light;
+        }
+
+        i.fa-quote-right {
+          position: absolute;
+          bottom: 75px;
+          right: -10px;
+          font-size: 2.5rem;
+        }
+
+        i.fa-quote-left {
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          font-size: 2.5rem;
+        }
+      }
+
+      &_rate {
+        margin: 1rem 0;
+
+        i:last-child {
+          opacity: 0.4;
+          color: gray !important;
+        }
+      }
+
+      .message {
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      &_person {
+        display: flex;
+        padding: 0.5rem 2rem;
+        background: $primary;
+        font-size: 1rem;
+        align-items: center;
+        color: #fff;
+
+        img {
+          width: 70px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xl) {
+  .testimonials-content {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 1.5rem;
+
+    &_slide {
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .testimonials-content {
+    grid-template-columns: repeat(2, 1fr);
+
+    &_slide:last-child {
+      display: block;
+    }
+    .message {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .testimonials-content {
+    grid-template-columns: 1fr;
+
+    &_slide {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+}

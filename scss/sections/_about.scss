@@ -1,0 +1,130 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+
+.about {
+  // padding-top: 6rem;
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+
+    &-info {
+      line-height: 1.4;
+      font-size: 1.1rem;
+      color: rgba(#000, 0.7);
+      font-weight: 400;
+
+      h1 { 
+        color: $green-medium; 
+        font-size: 2rem;
+      }
+
+      &-box {
+        margin: 2em 0;
+
+        span {
+          display: inline-block;
+          width: 32%;
+          text-align: center;
+          background: #e9e9e9;
+          padding: 1em;
+          border-radius: 10px;
+          border: 1px rgba(128, 128, 128, 0.418) solid;
+        }
+      }
+    }
+
+    img {
+      padding-right: 2em;
+      width: 400;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: $xl) {
+  .about {
+    &-content {
+      &-info {
+        &-box {
+          span {
+            width: 49.5%;
+            &:last-child {
+              display: block;
+              width: 100%;
+              margin-top: 0.25em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .about {
+    
+    &-content {
+      flex-direction: column;
+
+
+      &-info {
+        order: 1;
+        
+        h1 { 
+          font-size: 1.75rem;
+        }
+
+        &-box {
+          margin: 0.75em 0;
+
+          span {
+            width: 32%;
+            &:last-child {
+              display: inline-block;
+              margin-top: 0;
+              width: 32%;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 550px;
+        height: 400px;
+        order: 2;
+        padding-right: 0;
+        margin: 2em auto 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .about {
+    &-content {
+      &-info {
+        &-box {
+          span, span:last-child {
+            display: block;
+            width: 100%;
+            margin: 0.5em auto;
+          }
+        }
+      }
+
+      img {
+        width: 430px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .about-content img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,69 @@
+@use '../custom.scss' as *;
+
+.title {
+  
+  &-category {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    display: inline-block;
+    background: $green-medium;
+    border-radius: 10px;
+  }
+
+  &-name {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+  }
+}
+
+.lead {
+  font-size: 1.4rem;
+}
+
+.text-muted {
+  color: #888;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1em;
+  
+  p {
+    color: $dark-green;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+    color: $green-medium;
+  }
+}
+
+.category {
+  background: $primary;
+  padding: 0.25em 1em;
+  border-radius: 15px;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+@media (max-width: $xl) {
+
+}
+
+@media (max-width: $md) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .title {
+    &-name {
+      margin: 0.75rem 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+  }
+}

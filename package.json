@@ -1,0 +1,26 @@
+{
+  "name": "jaramart",
+  "version": "1.0.0",
+  "description": "Practice Web Application with API",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/scss"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SASS",
+    "Javascript",
+    "API"
+  ],
+  "author": "Vince Jepoy Mendoza",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "autoprefixer": "^10.3.7",
+    "postcss-cli": "^9.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.43.2"
+  }
+}

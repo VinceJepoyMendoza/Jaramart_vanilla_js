@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/scss/style.css">
+  <link rel="stylesheet" href="assets/scss/fontawesome.css">
+  <title>Jaramart</title>
+</head>
+
+<body id="home">
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+  </nav>
+
+  <!-- secondary nav -->
+  <nav class="secondary-nav">
+    <div class="secondary-nav-button">
+      <button type="button" title="Scroll to top" id="scrollToTop" class="btn">
+        <i class="fas fa-chevron-up"></i>
+      </button>
+      <button type="button" title="open navigation" id="nav-button" class="btn">
+        <i class="fas fa-th-large"></i>
+      </button>
+    </div>
+    <div class="secondary-nav-content">
+      <a href="#feature" class="navLinks"><i class="fas fa-th-list"></i> Features</a>
+      <a href="#about" class="navLinks"><i class="fas fa-warehouse"></i> About</a>
+      <a href="#products" class="navLinks"><i class="fas fa-tshirt"></i> Products</a>
+      <a href="#testimonials" class="navLinks"><i class="fas fa-user-friends"> </i>Testimonials</a>
+      <a href="#order" class="navLinks"><i class="fas fa-shopping-bag"> </i>order</a>
+    </div>
+  </nav>
+
+  <div id="messageContainer">
+    <i class="fa fa-bell"></i>
+    <p id="notification"></p>
+  </div>
+
+  <!-- Feature / Swiper -->
+  <div class="swiper mySwiper" id="feature">
+    <div class="swiper-wrapper" id="feature-swiper"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- About section -->
+  <section id="about" class="about py-3">
+    <div class="container">
+      <div class="section-header">
+        <p>About Us</p>
+        <h3>Why Choose Us?</h3>
+      </div>
+      <div class="about-content">
+        <img src="images/about-us.jpg" alt="">
+        <div class="about-content-info">
+          <h1>Best Shop In The Country</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus officiis ex maxime, eligendi voluptate excepturi? Rem id quos quis reprehenderit vitae totam cum odio officiis aperiam adipisci incidunt deleniti ad est accusantium ipsam saepe expedita vero, labore unde repellat!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur sunt eos distinctio incidunt repellendus?</p>
+          <div class="about-content-info-box">
+            <span><i class="fas fa-truck"></i> Fast Delivery</span>
+            <span><i class="fas fa-money-bill-wave"></i> Easy Payment</span>
+            <span><i class="fas fa-headset"></i> Open 24/7</span>
+          </div>
+          <button type="button" title="Order Now" class="btn btn-primary" id="about-order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product section -->
+  <section id="products" class="products py-3">
+    <div class="section-header">
+      <p>Premium Quality</p>
+      <h3>Reliable Items</h3>
+    </div>
+    <!-- Product cards insert here -->
+    <div class="products-content">
+      <!-- <div class="products-content-card">
+        <img src="images/product-1.png" alt="product">
+        <div class="products-content-card-desc">
+          <h3 id="prod-name">Tasty Food</h3>
+          <div id="products-card-rating">
+            <p id="prodcut-card-rate">3.6</p>
+            <div id="prodcuts-card-star"></div>
+          </div>
+          <h4 id="prod-price">$15.99</h4>
+          <button type="button" title="Order Now" class="btn btn-primary" id="addToCart">Add To Card</button>
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <!-- Product id, title, price, description, category, image, rating, count -->
+
+  <!-- Product Modal -->
+  <div id="product-Modal" class="product-modal">
+    <button type="button" title="Close Modal?" class="btn-close-modal">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="product-modal-content">
+      <!-- <small class="category">mens</small>
+      <img src="images/sapiens.png" class="modal-img" alt="buy me">
+      <h2>Human</h2>
+      <div class="product-modal-content-desc">
+        <p></p>$$$$$</p>
+        <span>
+          <p>4.7
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 120
+          </p>
+        </span>
+      </div>
+      <div class="product-modal-content-btn">
+        <button type="button" title="Add to Cart?" class="modalCartBtn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        <button type="button" title="Add to Likes?" class="modalLikeBtn"><i class="fas fa-heart"></i> Add to likes</button>
+      </div>
+      <small class="modal-description">adsasdasdasdasd</small> -->
+    </div>
+  </div>
+
+  <!-- Product Likes -->
+  <div id="main-likes">
+    <div class="main-likes">
+      <div class="main-likes-dark-bg"></div>
+      <button id="close-likes" type="button" title="Close likes?" class="btn">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <div class="main-likes_prod">
+        <!-- <div class="main-likes_prod_item">
+          <img src="images/image-1.jpg" alt="liked item">
+          <div class="main-cart_prod_item__desc">
+            <p>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
+            <p class="price">$109.95</p>
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" min="0" max="20">
+            </div>
+            <p class="total">Total: $2000</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Container -->
+  <section id="main-cart" class="main-cart">
+    <div class="main-cart-content">
+      <div class="main-cart-content-items">
+        <!-- Item -->
+        <!-- <div class="main-cart-content-items-item">
+          <img src="images/image-1.jpg" alt="cart item img">
+          <div class="item-desc">
+            <button type="button" title="Remove item from cart?" class="btn cart-item-btn-remove"><i class="fas fa-times"></i></button>
+            <p class="item-desc-title">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
+            <p>$109.95</p>
+            <div class="item-desc-pricing">
+              <label for="item-desc-quantity">Quantity:</label>
+              <input type="number" class="item-desc-quantity" min="1" value="1">
+              <p>Total: <b>$550</b></p>
+            </div>
+          </div>
+        </div> -->
+        <!-- End of item -->
+      </div>
+      <div class="main-cart-content-btn">
+        <b>Cart Total: $<span id="cart-Total">0</span></b>
+        <a href="receipt.html" target="_blank" title="Check out all the items" id="checkout" class="">Check Out</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review -->
+  <section id="testimonials" class="testimonials py-3">
+    <div class="container">
+      <div class="section-header">
+        <p>Testimonials</p>
+        <h3>Hear What our Clients Says:</h3>
+      </div>
+      <div class="testimonials-content">
+        <!-- Testimonail card -->
+        <div class="testimonials-content_slide">
+          <div class="testimonials-content_slide_desc">
+            <i class="fas fa-quote-left"></i>
+            <i class="fas fa-quote-right"></i>
+            <div class="testimonials-content_slide_rate">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti, magnam ut quasi alias dolorum.</p>
+          </div>
+          <div class="testimonials-content_slide_person">
+            <img src="images/testimonials/person-1.jpg" alt="testimonials">
+            <span>
+              <p>Enricko Montalban</p>
+              <small>Athlete</small>
+            </span>
+          </div>
+        </div>
+        <!-- Testimonail card -->
+        <div class="testimonials-content_slide">
+          <div class="testimonials-content_slide_desc">
+            <i class="fas fa-quote-left"></i>
+            <i class="fas fa-quote-right"></i>
+            <div class="testimonials-content_slide_rate">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti, magnam ut quasi alias dolorum.</p>
+          </div>
+          <div class="testimonials-content_slide_person">
+            <img src="images/testimonials/person-2.jpg" alt="testimonials">
+            <span>
+              <p>Jessy Doe</p>
+              <small>Shop Owner</small>
+            </span>
+          </div>
+        </div>
+        <!-- Testimonail card -->
+        <div class="testimonials-content_slide">
+          <div class="testimonials-content_slide_desc">
+            <i class="fas fa-quote-left"></i>
+            <i class="fas fa-quote-right"></i>
+            <div class="testimonials-content_slide_rate">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti, magnam ut quasi alias dolorum.</p>
+          </div>
+          <div class="testimonials-content_slide_person">
+            <img src="images/testimonials/person-3.jpg" alt="testimonials">
+            <span>
+              <p>Rob Powell</p>
+              <small>Highschool Student</small>
+            </span>
+          </div>
+        </div>
+        <!-- Testimonail card -->
+        <div class="testimonials-content_slide">
+          <div class="testimonials-content_slide_desc">
+            <i class="fas fa-quote-left"></i>
+            <i class="fas fa-quote-right"></i>
+            <div class="testimonials-content_slide_rate">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti, magnam ut quasi alias dolorum.</p>
+          </div>
+          <div class="testimonials-content_slide_person">
+            <img src="images/testimonials/person-4.jpg" alt="testimonials">
+            <span>
+              <p>Chris Jones</p>
+              <small>Shop Owner</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="order" class="order py-3">
+    <div class="section-header">
+      <p>Order Now</p>
+      <h3>Fast and Free</h3>
+    </div>
+    <div class="container">
+      <div class="order-content">
+        <div class="order-content-desc">
+          <h1>99.9% Reliable and Quality Products</h1>
+          <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, doloremque sed, suscipit et porro quas deleniti placeat, officiis sunt reiciendis cum. Alias, illum porro. Tenetur.</small>
+          <p class="lead">Brand Quality</p>
+          <div class="order-content-desc-checks">
+            <p><i class="fas fa-check"></i> Lorem ipsum dolor sit amet.</p>
+            <p><i class="fas fa-check"></i> Lorem ipsum dolor sit amet.</p>
+            <p><i class="fas fa-check"></i> Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <form class="order-content-form">
+          <div class="order-content-form-row">
+            <div>
+              <label for="form-name">Name</label>
+              <input type="text" name="name" id="form-name" placeholder="enter your name" required>
+            </div>
+            <div>
+              <label for="form-number">Your number</label>
+              <input type="tel" name="number" id="form-number" placeholder="enter your number" required>
+            </div>
+          </div>
+          <div class="order-content-form-row">
+            <div>
+              <label for="form-order">Your order</label>
+              <input type="text" name="order" id="form-order" placeholder="enter your order" required>
+            </div>
+            <div>
+              <label for="form-quantity">How many</label>
+              <input type="number" min="1" name="quanity" id="form-quantity" value="1" placeholder="enter quantity">
+            </div>
+          </div>
+          <div class="order-content-form-row">
+            <div>
+              <label for="form-date">Date and Time</label>
+              <input type="datetime-local" name="date" id="form-name" placeholder="enter your name" required>
+            </div>
+            <div>
+              <label for="form-location">Location</label>
+              <input type="text" name="location" id="form-location" placeholder="enter address">
+            </div>
+          </div>
+          <div>
+            <label for="form-message">Enter your special instruction</label>
+            <textarea name="message" id="form-message" cols="30" rows="10"></textarea>
+          </div>
+          <div class="order-content-form-row">
+            <input type="submit" value="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="footer"></footer>
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

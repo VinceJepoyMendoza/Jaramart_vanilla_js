@@ -1,0 +1,49 @@
+@use '../custom.scss' as *;
+@use '../components/mixins' as *;
+@use '../components/animations' as *;
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem;
+  border: none;
+  background: $secondary;
+  // margin: 0 0.15em;
+
+  &:hover {
+    @include mRotate-icon;
+  }
+
+  &-primary {
+    color: #fff;
+    background: $primary;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-close-modal {
+    position: fixed;
+    top: 0.4em;
+    right: 0.75em;
+    background: transparent;
+    font-size: 2rem;
+    border: none;
+
+    &:hover {
+      animation: rotate-icon 0.3s ease-out;
+    }
+  }
+}
+
+#mode {
+  padding: 1rem 0.5rem;
+  color: #fff;
+  background: $primary;
+}
+
+@media (max-width: $md) {
+  .btn {
+    margin: 0 0.05em;
+  }
+}

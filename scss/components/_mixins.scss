@@ -1,0 +1,77 @@
+@use '../custom.scss' as *;
+@use 'animations' as *;
+
+// Add shadow
+@mixin shadow {
+  box-shadow: 10px 10px 15px 0 rgba(#000, 0.15);
+}
+
+@mixin shadow-sm {
+  box-shadow: 5px 5px 5px 0 rgba(#000, 0.15);
+}
+
+// Absolute Center 
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Transition property
+@mixin transitionProperty {
+  transition: all 0.3s ease-out;
+}
+
+@mixin mRotate-icon {
+  i {
+    animation: rotate-icon 0.3s ease-out;
+    color: #fff;
+  }
+  background: $primary !important;
+}
+
+@mixin card {
+  background: #fff;
+  padding: 0.75em;
+  border-radius: 5px;
+
+  @include border-sm;
+  @include shadow-sm;
+}
+
+@mixin clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+@mixin clamp2 {
+  -webkit-line-clamp: 2 !important;
+  @include clamp;
+}
+
+@mixin clamp3 {
+  -webkit-line-clamp: 3 !important;
+  @include clamp;
+}
+
+@mixin border-sm {
+  border: 1px rgba(#000000, 0.20) solid;
+}
+
+@mixin textShadow-right {
+  text-shadow: 3px 3px 0 $green-dark,
+                6px 6px 0 $green-light;
+}
+
+@mixin textShadow-left {
+  text-shadow: -3px 3px 0 $green-dark,
+                -6px 6px 0 $green-light;
+}
+
+@mixin gradient {
+  background: linear-gradient(to right, $dark-green, $primary);
+}
